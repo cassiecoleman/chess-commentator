@@ -4,8 +4,14 @@ namespace Tests\AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class DefaultControllerTest extends WebTestCase
+/**
+ * Test for IndexController
+ */
+class IndexControllerTest extends WebTestCase
 {
+    /**
+     * @return void
+     */
     public function testIndex()
     {
         $client = static::createClient();
@@ -13,6 +19,9 @@ class DefaultControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/');
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertContains('Welcome to Symfony', $crawler->filter('#container h1')->text());
+        $this->assertGreaterThan(
+            0,
+            $crawler->filter('html:contains("Hello world!")')->count()
+        );
     }
 }
