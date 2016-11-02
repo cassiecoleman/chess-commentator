@@ -17,6 +17,6 @@ class IndexController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('index.html.twig');
+        return $this->render('layout.html.twig');
     }
 }
