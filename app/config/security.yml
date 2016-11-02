@@ -16,7 +16,10 @@ security:
     firewalls:
         main:
             pattern:    ^/
-            http_basic: ~
+            anonymous: ~
+            form_login:
+                login_path: login
+                check_path: login
             provider:   our_db_provider
             # activate different ways to authenticate
 
