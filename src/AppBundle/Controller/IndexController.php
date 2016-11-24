@@ -12,7 +12,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class IndexController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="index")
      * @return Response
      */
     public function indexAction()
